@@ -1,0 +1,92 @@
+*{
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    display: flex;
+    justify-items: flex-start;
+    background-color: #f9f1f1
+}
+.sidenav{
+    left: 20px;
+    width: 400px;
+    height: 510%;
+    background: #042331;
+    box-shadow: 9px 7px 8px 1px rgba(0,0,0,0.72);
+-webkit-box-shadow: 9px 7px 8px 1px rgba(0,0,0,0.72);
+-moz-box-shadow: 9px 7px 8px 1px rgba(0,0,0,0.72);
+}
+header{
+    height:45px;
+    list-style: none;
+    padding: 15px;
+}
+header a{
+    text-decoration: none;
+    color: white;
+    font-size: x-large;
+}
+header:hover{
+    background-color: gray;
+}
+aside{
+    height: 500px;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+}
+aside nav ul{
+    padding:0%;
+}
+aside nav li{
+    list-style: none;
+    padding: 20px;
+}
+aside nav li:hover{
+    background-color:gray;
+}
+aside nav li a{
+    text-decoration: none;
+    color: white;
+    font-size: medium;
+}
+.container{
+    background-color: white;
+    width: 1000px;
+    margin-left: 20px;
+    box-shadow: 9px 7px 8px 1px rgba(0,0,0,0.72);
+-webkit-box-shadow: 9px 7px 8px 1px rgba(0,0,0,0.72);
+-moz-box-shadow: 9px 7px 8px 1px rgba(0,0,0,0.72);
+}
+.tle{
+    text-align: center;
+    font-size:65px;
+    padding: 20px;
+    border-bottom: 2px solid gray;
+}
+.nav-container{
+    padding-left: 60px;
+    font-size: 22px;
+}
+section p{
+    padding-bottom: 45px;
+    font-size: 45px;
+}
+section h1{
+    padding: 40px;
+    padding-top: 120px;
+    padding-right: 98px;
+    text-align: center;
+    font-size: 90px;
+}
+table{
+    width: 100px;
+    border-spacing: 150px 5px;
+}
+footer{
+    height: 40px;
+}
+footer p{
+    margin-top: 10px;
+    padding-left: 10px;
+    color: white;
+    font-size: x-large;
+}
