@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        {{ numero1 }}<!--Interpolaciones de Vue-->
+        {{ numero2 }}
+        <input type="number" v-model="numero1"><!--Directivas Vue v-model-->
+        <input type="number" v-model="numero2">
+        <!--
+            DIRECTIVAS CONDICIONALES
+            v-if
+            DIRECTIVAS CICLOS
+            v-for
+        -->
+        <hr>
+        <p>
+            Suma:{{ suma() }}
+            Resta:{{ resta() }}
+            Multiplicacion:{{ multiplicacion() }}
+        </p> 
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el:'#app',
+            data:{
+                numero1:0,
+                numero2:0
+            },
+            //methods: los metodos del modelo de Vue se definen con esta palabra en el objeto mismo
+            methods:{
+                suma:function(){
+                    return this.numero1 -(-this.numero2)
+                },
+                resta:function(){
+                    return this.numero1 -this.numero2
+                },
+                multiplicacion:function(){
+                    return this.numero1 * this.numero2
+                },
+                divison:function(){
+                    return this.numero1 /this.numero2 
+                }
+
+            }
+        })
+    </script>
+
+</body>
+</html>

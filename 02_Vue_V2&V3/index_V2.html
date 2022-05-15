@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue V2</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{ mensaje }}
+        {{ times }}
+        <!--Eventos-->
+        <button v-on:click="reverseText">
+            Reverso del Texto
+        </button>
+        <button v-on:click="contar">
+            Contador
+        </button>
+        
+    </div>
+    <script>
+        var app =new Vue({
+            el:'#app',
+            data:{
+                mensaje:'Hola ramosSIS',
+                times:"0"
+            },
+            methods:{
+                reverseText:function(){
+                    this.mensaje=this.mensaje.split('').reverse().join()
+                },
+                contar:function(){
+                    setInterval(()=>{
+                        this.times++
+                    },2000)
+                }
+            }
+        })
+    </script>
+</body>
+</html>
