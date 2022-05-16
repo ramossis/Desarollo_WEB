@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios 2 Vue</title>
+</head>
+<body>
+    <div id="app">
+        <li v-for="(framew,i) in frameworks">
+            El Framework {{ framew }} fue creado por {{ creador[i] }}
+        </li>
+    </div>
+    <!--
+        "v-for" 2 array
+        angular ----- Misko Hevery
+        Vue --------- Evan You
+        React ------- Jordan Walke
+        Ember ------- Yehuda Katz 
+    -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el:'#app',
+            data:{
+                frameworks:['angular','vue','React','Ember'],
+                creador:['angular','vue','React','Ember']
+            }
+        })
+    </script>
+</body>
+</html>
