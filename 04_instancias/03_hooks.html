@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOOKS</title>
+</head>
+<body>
+    <div id="app">
+        {{ titulo }}
+        <input type="text" v-model="nombre">
+        {{ nombre }}
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el:'#app',
+            data:{
+                titulo:'ramosSIS',
+                nombre:'Ronaldo Ramos'
+            },
+            //beforeCreate= despues inicializacion instancia - antes componente cree
+            beforeCreate(){
+                alert('Antes de crear componente'+' '+this.nombre);
+            },
+            //created = ejecuta cuando instancia, evento , propiedad
+            created(){
+                alert ('creado componente'+' '+this.nombre);
+            },
+            // beforeMount= se ejecuta justo antes de añadir al DOM
+            beforeMount(){
+                alert('creado componente justo antes de añadir al DOM'+' '+this.nombre);
+            },
+            //mounted = se ejecuta justo despues de añadir al DOM
+            mounted(){
+                alert('creado componente justo despues de añadir al DOM'+' '+this.nombre);
+            },
+            //beforeUpdate = se ejecuta cuando el obejeto data cambia el DOM no
+            beforeUpdate(){
+                alert('objeto cambiado a:'+' '+this.nombre);
+            },
+            //updated = se ejecuta despues del cambio del objeto data
+            updated(){
+                alert('objeto cambiado '+' '+ this.nombre);
+            }
+            
+        })
+    </script>
+</body>
+</html>

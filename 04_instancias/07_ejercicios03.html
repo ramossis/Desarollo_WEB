@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios</title>
+</head>
+<body>
+    <div id="app">
+        <table>
+            <thead>
+                <tr>
+                    <th>Modelo</th>
+                    <th>Compañia</th>
+                    <th>Valor</th>
+                    <th>Fecha</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="data in stock">
+                    <td>{{ data.modelo }}</td>
+                    <td>{{ data.compania }}</td>
+                    <td>{{ data.valor |valor}}</td>
+                    <td>{{ data.fecha |fecha}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/accounting.js/0.3.2/accounting.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment-with-locales.js"></script>
+    <script>
+        Vue.filter('valor',(data)=>{
+            return accounting.formatMoney(data,"Bs",2,".",",");
+        });
+        Vue.filter('fecha',(data)=>{
+            return moment(data).format('MMMM Do YYYY, hh:mm:ss a');
+        })
+        const app = new Vue({
+            el:'#app',
+            data:{
+                stock:[
+                    {modelo:'iPhone XR',compania:'Apple',valor:'450',fecha:'2018-03-02'},
+                    {modelo:'iPhone XR',compania:'Apple',valor:'450',fecha:'2018-03-02'},
+                    {modelo:'iPhone XR',compania:'Apple',valor:'450',fecha:'2018-03-02'},
+                    {modelo:'iPhone XR',compania:'Apple',valor:'450',fecha:'2018-03-02'},
+                    {modelo:'iPhone XR',compania:'Apple',valor:'450',fecha:'2018-03-02'}
+                ]
+            }
+        })
+    </script>
+</body>
+</html>

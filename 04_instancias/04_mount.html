@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        {{ titulo }}
+        <br>
+        <input type="text" v-model="nombre">
+        <br>
+        {{ nombre }}
+    </div>
+    <!--Aqui se usa la independecia de instancias-->
+    <div id="componente">
+        {{ nombre2 }}
+        <input type="text" v-model="nombre2">
+        <button v-on:click="montar()">Montar Instancia 1</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script>
+        const uno = new Vue({
+            data:{
+                titulo:'ramosSis',
+                nombre:'Ronaldo Ramos'
+            }
+        })
+        const dos = new Vue({
+            el:'#componente',
+            data:{
+                nombre2:uno.nombre
+            },
+            methods:{
+                montar(){
+                    uno.$mount('#app'); //$mount = monta una instancia a un elemnto del div 
+                }
+            }
+        })
+    </script>
+</body>
+</html>
