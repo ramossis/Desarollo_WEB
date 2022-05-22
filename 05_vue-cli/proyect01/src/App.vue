@@ -10,6 +10,7 @@
       <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
     </ul>
     <h2>Ecosystem</h2>
+    <h1 id="titulo">HOLA MUNDO</h1>
     <ul>
       <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
       <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
@@ -43,7 +44,9 @@ export default {
 h1, h2 {
   font-weight: normal;
 }
-
+#titulo{
+  color:#42b983;
+}
 ul {
   list-style-type: none;
   padding: 0;
